@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -29,7 +30,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} h-full flex flex-col`}>
-        <SmoothScroll />
+        <Suspense>
+          <SmoothScroll />
+        </Suspense>
         <Header />
         <main className="pt-12 flex-grow">
           {children}
