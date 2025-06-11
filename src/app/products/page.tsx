@@ -2,11 +2,13 @@ import { products, categories } from '@/data/products';
 import ProductCard from '@/components/product/ProductCard';
 import { ProductCategory } from '@/types/product';
 
-interface PageProps {
-  searchParams: { [key: string]: string | string[] | undefined }
-}
+type SearchParams = { [key: string]: string | string[] | undefined }
 
-export default function ProductsPage({ searchParams }: PageProps) {
+export default function ProductsPage({
+  searchParams,
+}: {
+  searchParams: SearchParams
+}) {
   const selectedCategory = searchParams.category as ProductCategory | undefined;
   const filteredProducts = selectedCategory
     ? products.filter(product => product.category === selectedCategory)
