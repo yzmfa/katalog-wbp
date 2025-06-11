@@ -2,11 +2,11 @@ import { products, categories } from '@/data/products';
 import ProductCard from '@/components/product/ProductCard';
 import { ProductCategory } from '@/types/product';
 
-interface ProductsPageProps {
-  searchParams: { category?: string };
+interface PageProps {
+  searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export default function ProductsPage({ searchParams }: ProductsPageProps) {
+export default function ProductsPage({ searchParams }: PageProps) {
   const selectedCategory = searchParams.category as ProductCategory | undefined;
   const filteredProducts = selectedCategory
     ? products.filter(product => product.category === selectedCategory)
@@ -49,7 +49,7 @@ export default function ProductsPage({ searchParams }: ProductsPageProps) {
           </div>
 
           {/* Product grid */}
-          <div className="mt-8 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {filteredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
