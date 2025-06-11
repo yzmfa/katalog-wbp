@@ -1,17 +1,7 @@
-'use client';
-
-import { products, categories } from '@/data/products';
-import ProductCard from '@/components/product/ProductCard';
-import { ProductCategory } from '@/types/product';
-import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
+import ProductsContent from '@/components/products/ProductsContent';
 
 export default function ProductsPage() {
-  const searchParams = useSearchParams();
-  const selectedCategory = searchParams.get('category') as ProductCategory | undefined;
-  const filteredProducts = selectedCategory
-    ? products.filter(product => product.category === selectedCategory)
-    : products;
-
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -21,45 +11,13 @@ export default function ProductsPage() {
             Temukan berbagai produk unik dan berkualitas hasil karya Warga Binaan Pemasyarakatan
           </p>
 
-          {/* Category filters */}
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="/products"
-              className={`inline-flex items-center rounded-md px-3 py-2 text-sm font-medium ${
-                !selectedCategory
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-              }`}
-            >
-              Semua
-            </a>
-            {categories.map((category) => (
-              <a
-                key={category.id}
-                href={`/products?category=${category.id}`}
-                className={`inline-flex items-center rounded-md px-3 py-2 text-sm font-medium ${
-                  selectedCategory === category.id
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-                }`}
-              >
-                {category.name}
-              </a>
-            ))}
-          </div>
-
-          {/* Product grid */}
-          <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-
-          {filteredProducts.length === 0 && (
+          <Suspense fallback={
             <div className="mt-8 text-center">
-              <p className="text-gray-500">Tidak ada produk yang ditemukan.</p>
+              <p className="text-gray-500">Memuat produk...</p>
             </div>
-          )}
+          }>
+            <ProductsContent />
+          </Suspense>
         </div>
       </div>
     </div>
