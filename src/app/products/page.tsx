@@ -1,15 +1,13 @@
+'use client';
+
 import { products, categories } from '@/data/products';
 import ProductCard from '@/components/product/ProductCard';
 import { ProductCategory } from '@/types/product';
+import { useSearchParams } from 'next/navigation';
 
-type SearchParams = { [key: string]: string | string[] | undefined }
-
-export default function ProductsPage({
-  searchParams,
-}: {
-  searchParams: SearchParams
-}) {
-  const selectedCategory = searchParams.category as ProductCategory | undefined;
+export default function ProductsPage() {
+  const searchParams = useSearchParams();
+  const selectedCategory = searchParams.get('category') as ProductCategory | undefined;
   const filteredProducts = selectedCategory
     ? products.filter(product => product.category === selectedCategory)
     : products;
