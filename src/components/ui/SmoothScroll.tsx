@@ -21,9 +21,9 @@ export default function SmoothScroll() {
         const targetElement = document.querySelector(link.hash);
         
         if (targetElement) {
-          // Special handling for categories and location sections
-          const isSpecialSection = link.hash === '#categories' || link.hash === '#location';
-          const headerOffset = isSpecialSection ? 0 : 100; // No offset for categories and location
+          // Special handling for featured products, categories and location sections
+          const isSpecialSection = link.hash === '#featured-products' || link.hash === '#categories' || link.hash === '#location';
+          const headerOffset = isSpecialSection ? 0 : 100; // No offset for special sections
           const windowHeight = window.innerHeight;
           const elementHeight = targetElement.getBoundingClientRect().height;
           
@@ -56,9 +56,9 @@ export default function SmoothScroll() {
         const targetElement = document.querySelector(window.location.hash);
         if (targetElement) {
           setTimeout(() => {
-            // Special handling for categories and location sections
-            const isSpecialSection = window.location.hash === '#categories' || window.location.hash === '#location';
-            const headerOffset = isSpecialSection ? 0 : 100; // No offset for categories and location
+            // Special handling for featured products, categories and location sections
+            const isSpecialSection = window.location.hash === '#featured-products' || window.location.hash === '#categories' || window.location.hash === '#location';
+            const headerOffset = isSpecialSection ? 0 : 100; // No offset for special sections
             const windowHeight = window.innerHeight;
             const elementHeight = targetElement.getBoundingClientRect().height;
             const elementPosition = targetElement.getBoundingClientRect().top;

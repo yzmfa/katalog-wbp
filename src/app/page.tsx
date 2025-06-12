@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <div className="bg-white">
       {/* Hero section */}
-      <div id="hero" className="relative isolate overflow-hidden bg-gradient-to-b from-blue-100/20 scroll-mt-24">
-        <div className="mx-auto max-w-7xl pb-24 pt-10 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-40">
+      <div id="hero" className="relative isolate overflow-hidden bg-gradient-to-b from-blue-100/20 scroll-mt-12">
+        <div className="mx-auto max-w-7xl pb-24 pt-6 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-30">
           <div className="px-6 lg:px-0 lg:pt-4">
             <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
               <h1 className="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
