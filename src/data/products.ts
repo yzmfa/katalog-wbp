@@ -32,7 +32,7 @@ export const products: Product[] = [
     images: ['/images/products/kemeja-batik.jpg', '/images/products/kemeja-batik-2.jpg'],
     featured: true,
     shopeeLink: 'https://shopee.co.id/kemeja-batik-modern',
-    whatsappNumber: '6281234567890',
+    whatsappNumber: '6281513878432',
     whatsappMessage: 'Halo, saya tertarik dengan Kemeja Batik Modern'
   },
   {
@@ -44,7 +44,7 @@ export const products: Product[] = [
     images: ['/images/products/tas-rajut.jpg'],
     featured: false,
     shopeeLink: 'https://shopee.co.id/tas-rajut-tradisional',
-    whatsappNumber: '6281234567890',
+    whatsappNumber: '6281513878432',
     whatsappMessage: 'Halo, saya tertarik dengan Tas Rajut Tradisional'
   },
   {
@@ -56,7 +56,7 @@ export const products: Product[] = [
     images: ['/images/products/sarung-tenun.jpg'],
     featured: false,
     shopeeLink: 'https://shopee.co.id/sarung-tenun-premium',
-    whatsappNumber: '6281234567890',
+    whatsappNumber: '6281513878432',
     whatsappMessage: 'Halo, saya tertarik dengan Sarung Tenun Premium'
   },
 
@@ -70,7 +70,7 @@ export const products: Product[] = [
     images: ['/images/products/lukisan-kanvas.jpg'],
     featured: true,
     shopeeLink: 'https://shopee.co.id/lukisan-kanvas',
-    whatsappNumber: '6281234567890',
+    whatsappNumber: '6281513878432',
     whatsappMessage: 'Halo, saya tertarik dengan Lukisan Kanvas'
   },
   {
@@ -82,7 +82,7 @@ export const products: Product[] = [
     images: ['/images/products/kayu-ukir.jpg'],
     featured: false,
     shopeeLink: 'https://shopee.co.id/kerajinan-kayu-ukir',
-    whatsappNumber: '6281234567890',
+    whatsappNumber: '6281513878432',
     whatsappMessage: 'Halo, saya tertarik dengan Kerajinan Kayu Ukir'
   },
   {
@@ -94,7 +94,7 @@ export const products: Product[] = [
     images: ['/images/products/vas-keramik.jpg'],
     featured: false,
     shopeeLink: 'https://shopee.co.id/vas-keramik',
-    whatsappNumber: '6281234567890',
+    whatsappNumber: '6281513878432',
     whatsappMessage: 'Halo, saya tertarik dengan Vas Keramik'
   },
 
@@ -108,7 +108,7 @@ export const products: Product[] = [
     images: ['/images/products/meja-jati.jpg'],
     featured: true,
     shopeeLink: 'https://shopee.co.id/meja-kayu-jati',
-    whatsappNumber: '6281234567890',
+    whatsappNumber: '6281513878432',
     whatsappMessage: 'Halo, saya tertarik dengan Meja Kayu Jati'
   },
   {
@@ -120,7 +120,7 @@ export const products: Product[] = [
     images: ['/images/products/kursi-rotan.jpg'],
     featured: false,
     shopeeLink: 'https://shopee.co.id/kursi-rotan',
-    whatsappNumber: '6281234567890',
+    whatsappNumber: '6281513878432',
     whatsappMessage: 'Halo, saya tertarik dengan Kursi Rotan'
   },
   {
@@ -132,7 +132,7 @@ export const products: Product[] = [
     images: ['/images/products/lemari-kayu.jpg'],
     featured: false,
     shopeeLink: 'https://shopee.co.id/lemari-kayu',
-    whatsappNumber: '6281234567890',
+    whatsappNumber: '6281513878432',
     whatsappMessage: 'Halo, saya tertarik dengan Lemari Kayu'
   }
 ]; 

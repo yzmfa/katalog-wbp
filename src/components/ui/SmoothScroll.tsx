@@ -21,7 +21,9 @@ export default function SmoothScroll() {
         const targetElement = document.querySelector(link.hash);
         
         if (targetElement) {
-          const headerOffset = 80; // Adjust this value based on your header height
+          // Special handling for categories and location sections
+          const isSpecialSection = link.hash === '#categories' || link.hash === '#location';
+          const headerOffset = isSpecialSection ? 0 : 100; // No offset for categories and location
           const windowHeight = window.innerHeight;
           const elementHeight = targetElement.getBoundingClientRect().height;
           
@@ -29,11 +31,13 @@ export default function SmoothScroll() {
           const elementPosition = targetElement.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
           
-          // Calculate the center position
-          const centerPosition = offsetPosition - (windowHeight / 2) + (elementHeight / 2);
+          // For special sections, scroll to the top of the section instead of centering
+          const scrollPosition = isSpecialSection 
+            ? offsetPosition 
+            : offsetPosition - (windowHeight / 2) + (elementHeight / 2);
 
           window.scrollTo({
-            top: centerPosition,
+            top: scrollPosition,
             behavior: 'smooth'
           });
 
@@ -52,18 +56,24 @@ export default function SmoothScroll() {
         const targetElement = document.querySelector(window.location.hash);
         if (targetElement) {
           setTimeout(() => {
-            const headerOffset = 80;
+            // Special handling for categories and location sections
+            const isSpecialSection = window.location.hash === '#categories' || window.location.hash === '#location';
+            const headerOffset = isSpecialSection ? 0 : 100; // No offset for categories and location
             const windowHeight = window.innerHeight;
             const elementHeight = targetElement.getBoundingClientRect().height;
             const elementPosition = targetElement.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            const centerPosition = offsetPosition - (windowHeight / 2) + (elementHeight / 2);
+            
+            // For special sections, scroll to the top of the section instead of centering
+            const scrollPosition = isSpecialSection 
+              ? offsetPosition 
+              : offsetPosition - (windowHeight / 2) + (elementHeight / 2);
 
             window.scrollTo({
-              top: centerPosition,
+              top: scrollPosition,
               behavior: 'smooth'
             });
-          }, 100); // Small delay to ensure proper calculation
+          }, 100);
         }
       }
     };
